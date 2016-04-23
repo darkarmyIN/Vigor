@@ -10,6 +10,7 @@ pod 'IQKeyboardManager'
 pod 'SVProgressHUD'
 pod 'SDWebImage', '~>3.7'
 pod 'Charts'
+pod 'KinveyKit'
 
 end
 

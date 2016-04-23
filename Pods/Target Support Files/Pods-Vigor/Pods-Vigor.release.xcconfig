@@ -1,8 +1,9 @@
-EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/KinveyKit" KinveyKit-1.40.7/include
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Charts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/DZNEmptyDataSet.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/IQKeyboardManager.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SDWebImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SVProgressHUD.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Charts" -framework "DZNEmptyDataSet" -framework "IQKeyboardManager" -framework "SDWebImage" -framework "SVProgressHUD"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/KinveyKit/KinveyKit-1.40.7"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Charts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/DZNEmptyDataSet.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/IQKeyboardManager.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SDWebImage.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/SVProgressHUD.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/KinveyKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"KinveyKit" -l"sqlite3" -framework "Accounts" -framework "Charts" -framework "CoreGraphics" -framework "CoreLocation" -framework "DZNEmptyDataSet" -framework "IQKeyboardManager" -framework "MobileCoreServices" -framework "SDWebImage" -framework "SVProgressHUD" -framework "Security" -framework "Social" -framework "SystemConfiguration" -weak_framework "WebKit"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Vigor
 PODS_ROOT = ${SRCROOT}/Pods

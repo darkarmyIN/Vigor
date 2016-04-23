@@ -15,8 +15,23 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
 	// Override point for customization after application launch.
+    [[KCSClient sharedClient] initializeKinveyServiceForAppKey:KINVEY_APP_ID
+                                                 withAppSecret:KINVEY_APP_SECRET
+                                                  usingOptions:nil];
+    [KCSPing pingKinveyWithBlock:^(KCSPingResult *result)
+     {
+         if (result.pingWasSuccessful)
+         {
+             NSLog(@"Kinvey Ping Success");
+         }
+         else
+         {
+             NSLog(@"Kinvey Ping Failed");
+         }
+     }];
 	return YES;
 }
 
