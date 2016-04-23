@@ -405,7 +405,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br6-I4-gfL" customClass="ORKPieChartView">
-                                <rect key="frame" x="67" y="171" width="240" height="240"/>
+                                <rect key="frame" x="67" y="128" width="240" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="EBx-Yr-e6U"/>
@@ -416,7 +416,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a8j-2W-mUc" firstAttribute="top" secondItem="03D-I2-k7f" secondAttribute="bottom" constant="8" id="9IE-Ho-3Lv"/>
-                            <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="br6-I4-gfL" secondAttribute="bottom" constant="8" id="Hy7-0W-y9R"/>
+                            <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="br6-I4-gfL" secondAttribute="bottom" constant="51" id="Hy7-0W-y9R"/>
                             <constraint firstItem="br6-I4-gfL" firstAttribute="centerX" secondItem="8d6-VN-TMa" secondAttribute="centerX" id="Nmh-1w-DOM"/>
                             <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="UFJ-Qj-IjG" secondAttribute="bottom" constant="8" id="WSf-zQ-sI1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="03D-I2-k7f" secondAttribute="trailing" id="Z23-6X-G01"/>
