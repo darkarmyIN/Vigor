@@ -36,6 +36,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    SVHUD_SHOW;
 	
 	posCount = 1;
 	negCount = 1;
@@ -119,7 +121,7 @@
             //got all events back from server -- update graph
 			NSString *pgrmString = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"];
 			kinveyDataArray = [[objectsOrNil filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"programName == %@", pgrmString]] mutableCopy];
-//            kinveyDataArray = [NSMutableArray arrayWithArray:objectsOrNil];
+            SVHUD_HIDE;
         }
     } withProgressBlock:nil];
     

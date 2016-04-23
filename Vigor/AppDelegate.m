@@ -43,6 +43,7 @@
 		self.window.rootViewController = tabVC;
 	}
 	else {
+        [[NSUserDefaults standardUserDefaults] setObject:@"Sorte Workout" forKey:@"CurrentProgram"];
 		UINavigationController *navc = [storyboard instantiateViewControllerWithIdentifier:@"InputVCNav"];
 		self.window.rootViewController = navc;
 	}

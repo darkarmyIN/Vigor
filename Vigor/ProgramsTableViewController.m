@@ -11,6 +11,7 @@
 @interface ProgramsTableViewController ()
 {
     NSArray *programNames;
+    NSArray *programDesc;
 }
 
 @end
@@ -27,7 +28,27 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    programNames = @[@"Insanity Workout", @"Greek God Program", @"Vesuvius Regimen", @"Hercules Task Marathon", @"Sorte Workout"];
+    programNames = @[@"Insanity Workout",
+                     @"Greek God Program",
+                     @"Vesuvius Regimen",
+                     @"Hercules Task Marathon",
+                     @"Sorte Workout",
+                     @"Warrior Body",
+                     @"Superhero Workout",
+                     @"Guns Like Wahlberg",
+                     @"Terry Crews Regimen",
+                     @"Saiyan Gym Training"];
+    
+    programDesc = @[@"Be very sure you can handle this.",
+                    @"Get the body of Thor.",
+                    @"You want those abs, don't you?",
+                    @"This task is not for mortal humans",
+                    @"This workout is not for normal people.",
+                    @"Train like you have to fight Superman",
+                    @"Even Bruce Wayne follows this workout",
+                    @"Get guns like Mark Wahlberg",
+                    @"Be ripped like Crews",
+                    @"Prepare for the next martial arts tournament."];
 	
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
@@ -62,7 +83,7 @@
     }
     cell.programImage = nil;
     cell.programNameLabel.text = [NSString stringWithFormat:@"%@", [programNames objectAtIndex:indexPath.row]];
-    cell.programDescriptionLabel.text = [NSString stringWithFormat:@"SORTE WTF times %li", (long) indexPath.row];
+    cell.programDescriptionLabel.text = [programDesc objectAtIndex:indexPath.row];
     return cell;
 }
 

@@ -122,74 +122,81 @@
     ORKTaskResult *feedbackComplete = [taskViewController result];
     
     ORKStepResult *feedbackProvided = (ORKStepResult *) [feedbackComplete.results lastObject];
-	
-	NSString *feedbackString = [[feedbackProvided.results firstObject] valueForKey:@"answer"];
     
-    // obtain input value from [[finalResult.results firstObject] valueForKey:@"answer"]
-    // send this value to haven api, then send results of that to kinvey
+    if (reason == ORKTaskViewControllerFinishReasonCompleted)
+    {
 	
-	NSURL *URL = [NSURL URLWithString:@"https://api.havenondemand.com/1/api/sync/analyzesentiment/v1"];
-	
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-	request.HTTPMethod = @"POST";
-	
-	NSString *httpBody = [NSString stringWithFormat:@"apikey=72e6bddf-7f53-4779-90e9-7b27688792a5&text=%@", feedbackString];
-	request.HTTPBody = [httpBody dataUsingEncoding:NSUTF8StringEncoding];
-    
-    SVHUD_SHOW;
-	
-	[[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-		
-		if (error)
-			return;
-		
-		@try {
-			id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-			NSLog(@"analyzesentiment:\n%@", jsonData);
-			
-			CGFloat aggscore = [[jsonData valueForKeyPath:@"aggregate.score"] doubleValue];
-			NSString *aggString = [jsonData valueForKeyPath:@"aggregate.sentiment"];
-			
-			NSLog(@"Agg score = %.4f | Agg string = %@", aggscore, aggString);
-			
-			// Save to core data
-			[Feedback createNewFeedbackWithDate:[NSDate date] review:aggString value:aggscore];
-			
-			// Push to server
+        NSString *feedbackString = [[feedbackProvided.results firstObject] valueForKey:@"answer"];
+        
+        // obtain input value from [[finalResult.results firstObject] valueForKey:@"answer"]
+        // send this value to haven api, then send results of that to kinvey
+        
+        NSURL *URL = [NSURL URLWithString:@"https://api.havenondemand.com/1/api/sync/analyzesentiment/v1"];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+        request.HTTPMethod = @"POST";
+        
+        NSString *httpBody = [NSString stringWithFormat:@"apikey=72e6bddf-7f53-4779-90e9-7b27688792a5&text=%@", feedbackString];
+        request.HTTPBody = [httpBody dataUsingEncoding:NSUTF8StringEncoding];
+        
+        SVHUD_SHOW;
+        
+        [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
-            OnlineFeedback *feedback = [[OnlineFeedback alloc] init];
-            feedback.dateOfUpload = [NSDate date];
-            feedback.valueForFeedback = [NSNumber numberWithFloat:aggscore];
-            feedback.review = aggString;
-//            feedback.programName = [NSString stringWithFormat:@"SorteSwag%i", arc4random_uniform(9)+1];
-			feedback.programName = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"];
-			
-            [store saveObject:feedback withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil)
-             {
-                 if (errorOrNil != nil)
+            if (error)
+                return;
+            
+            @try {
+                id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                NSLog(@"analyzesentiment:\n%@", jsonData);
+                
+                CGFloat aggscore = [[jsonData valueForKeyPath:@"aggregate.score"] doubleValue];
+                NSString *aggString = [jsonData valueForKeyPath:@"aggregate.sentiment"];
+                
+                NSLog(@"Agg score = %.4f | Agg string = %@", aggscore, aggString);
+                
+                // Save to core data
+                [Feedback createNewFeedbackWithDate:[NSDate date] review:aggString value:aggscore];
+                
+                // Push to server
+                
+                OnlineFeedback *feedback = [[OnlineFeedback alloc] init];
+                feedback.dateOfUpload = [NSDate date];
+                feedback.valueForFeedback = [NSNumber numberWithFloat:aggscore];
+                feedback.review = aggString;
+    //            feedback.programName = [NSString stringWithFormat:@"SorteSwag%i", arc4random_uniform(9)+1];
+                feedback.programName = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"];
+                
+                [store saveObject:feedback withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil)
                  {
-                     //save failed
-                     NSLog(@"Save failed, with error: %@", [errorOrNil localizedFailureReason]);
-                 } else
-                 {
-                     //save was successful
-                     NSLog(@"successful save");
-                 }
-             } withProgressBlock:nil];
+                     if (errorOrNil != nil)
+                     {
+                         //save failed
+                         NSLog(@"Save failed, with error: %@", [errorOrNil localizedFailureReason]);
+                     } else
+                     {
+                         //save was successful
+                         NSLog(@"successful save");
+                     }
+                 } withProgressBlock:nil];
+                
+                SVHUD_HIDE;
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            }
+            @catch (NSException *exception)
+            {
+                
+            }
             
-            SVHUD_HIDE;
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
-		}
-        @catch (NSException *exception)
-        {
-			
-		}
-		
-	}] resume];
+        }] resume];
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 
 }
-
 
 /*
 #pragma mark - Navigation
