@@ -19,7 +19,8 @@
 		59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF61CCB7C2E003C883D /* InputTableViewCell.m */; };
 		59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */; };
 		59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EFD1CCB83B9003C883D /* VUserDetails.m */; };
-		C19E3BEE30117CD98AAC04B7 /* Pods_Vigor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		59402F011CCB9F66003C883D /* BMRDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402F001CCB9F66003C883D /* BMRDetailsViewController.m */; };
+		C19E3BEE30117CD98AAC04B7 /* Pods_Vigor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		59402EFB1CCB827D003C883D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		59402EFC1CCB83B9003C883D /* VUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VUserDetails.h; path = Models/VUserDetails.h; sourceTree = "<group>"; };
 		59402EFD1CCB83B9003C883D /* VUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VUserDetails.m; path = Models/VUserDetails.m; sourceTree = "<group>"; };
+		59402EFF1CCB9F66003C883D /* BMRDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMRDetailsViewController.h; path = Controllers/BMRDetailsViewController.h; sourceTree = "<group>"; };
+		59402F001CCB9F66003C883D /* BMRDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMRDetailsViewController.m; path = Controllers/BMRDetailsViewController.m; sourceTree = "<group>"; };
 		92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +185,8 @@
 				59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */,
 				18DBA2931CCB9172006FD8DB /* GraphViewController.h */,
 				18DBA2941CCB9172006FD8DB /* GraphViewController.m */,
+				59402EFF1CCB9F66003C883D /* BMRDetailsViewController.h */,
+				59402F001CCB9F66003C883D /* BMRDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
 				59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */,
+				59402F011CCB9F66003C883D /* BMRDetailsViewController.m in Sources */,
 				18DBA2951CCB9172006FD8DB /* GraphViewController.m in Sources */,
 				59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */,
 				59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */,

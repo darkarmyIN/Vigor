@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C199E1D9F3A61A4A4F011CEE'
+               BlueprintIdentifier = '91746D688A1184B94E62452B'
                BlueprintName = 'Pods-Vigor'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-Vigor.a'>
+               BuildableName = 'Pods_Vigor.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

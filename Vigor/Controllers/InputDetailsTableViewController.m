@@ -7,6 +7,7 @@
 //
 
 #import "InputDetailsTableViewController.h"
+#import "BMRDetailsViewController.h"
 
 @interface InputDetailsTableViewController ()
 
@@ -19,7 +20,9 @@
 
 @end
 
-@implementation InputDetailsTableViewController
+@implementation InputDetailsTableViewController {
+	VUserDetails *details;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +55,7 @@
 		return;
 	}
 	
-	VUserDetails *details = [[VUserDetails alloc] init];
+	details = [[VUserDetails alloc] init];
 	
 	details.height = [_heightField.text doubleValue];
 	details.weight = [_weightField.text doubleValue];
@@ -64,6 +67,7 @@
 	else
 		details.sex = VUserSexMale;
 	
+	NSLog(@"%@", details);
 	
 }
 
@@ -75,7 +79,7 @@
 	
 	if (indexPath.section == tableView.numberOfSections - 1) {
 		// Done!
-		[self doneAction:self];
+//		[self doneAction:self];
 	}
 	
 }
@@ -124,14 +128,25 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	if ([segue.identifier isEqualToString:@"DoneDetailsSegue"]) {
+		UINavigationController *navc = [segue destinationViewController];
+		BMRDetailsViewController *bdvc = [navc.viewControllers firstObject];
+		details = [[VUserDetails alloc] init];
+		details.height = [_heightField.text doubleValue];
+		details.weight = [_weightField.text doubleValue];
+		details.age = [_ageField.text integerValue];
+		if ([_sexSegControl selectedSegmentIndex] == 2)
+			details.sex = VUserSexOther;
+		else if ([_sexSegControl selectedSegmentIndex] == 1)
+			details.sex = VUserSexFemale;
+		else
+			details.sex = VUserSexMale;
+		bdvc.details = details;
+	}
 }
-*/
 
 @end

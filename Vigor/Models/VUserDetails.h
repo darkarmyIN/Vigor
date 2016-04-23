@@ -35,5 +35,7 @@ typedef NS_ENUM(NSUInteger, VUserSex) {
 
 @property (nonatomic) CGFloat bmr;
 
+@property (nonatomic) CGFloat intakerecomm;
+
 
 @end

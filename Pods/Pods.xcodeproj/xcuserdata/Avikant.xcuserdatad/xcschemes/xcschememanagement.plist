@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0501AC6917EB99ECEE4F27D167E33DD6</key>
+		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51F5097CD57ACB3386C3D73A4B639FAB</key>
+		<key>30D72187AB458826A451F9416987B94A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DC370EC8B1095F634C88CDFEB3C043E</key>
+		<key>955C5B1098C6BF16C10D75B418A8FFEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>736E57AD5AEFAAF68D47AE4E8FCB8F68</key>
+		<key>B8730969985CFC2C9BD403D5CCE7013B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE4D7063252280A9D4B285B90B49EBA6</key>
+		<key>BAFD9719EBF6D4F02AE1B658CA47EFBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -36,4 +36,8 @@
 	return temp - 161;
 }
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"\n-------------\nbmi = %.3f\nabfp = %.3f\nbmr = %.3f\n---------------", self.bmi, self.abfp, self.bmr];
+}
+
 @end
