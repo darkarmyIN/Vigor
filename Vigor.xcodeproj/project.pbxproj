@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57857CE96023741B94670B60 /* libPods-Vigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */; };
+		18DBA2951CCB9172006FD8DB /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DBA2941CCB9172006FD8DB /* GraphViewController.m */; };
 		59402EBB1CCB78FD003C883D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBA1CCB78FD003C883D /* main.m */; };
 		59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBD1CCB78FD003C883D /* AppDelegate.m */; };
 		59402EC41CCB78FD003C883D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59402EC21CCB78FD003C883D /* Main.storyboard */; };
@@ -19,6 +19,7 @@
 		59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF61CCB7C2E003C883D /* InputTableViewCell.m */; };
 		59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */; };
 		59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EFD1CCB83B9003C883D /* VUserDetails.m */; };
+		C19E3BEE30117CD98AAC04B7 /* Pods_Vigor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18DBA2931CCB9172006FD8DB /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		18DBA2941CCB9172006FD8DB /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vigor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2698BD35DD876B11EF302015 /* Pods-Vigor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.release.xcconfig"; sourceTree = "<group>"; };
 		59402EB61CCB78FD003C883D /* Vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59402EBA1CCB78FD003C883D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,7 +67,6 @@
 		59402EFC1CCB83B9003C883D /* VUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VUserDetails.h; path = Models/VUserDetails.h; sourceTree = "<group>"; };
 		59402EFD1CCB83B9003C883D /* VUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VUserDetails.m; path = Models/VUserDetails.m; sourceTree = "<group>"; };
 		92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.debug.xcconfig"; sourceTree = "<group>"; };
-		C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vigor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57857CE96023741B94670B60 /* libPods-Vigor.a in Frameworks */,
+				C19E3BEE30117CD98AAC04B7 /* Pods_Vigor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +98,7 @@
 		2B2AA8300FA3FAD770F8560B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */,
+				21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +180,8 @@
 			children = (
 				59402EF81CCB7D89003C883D /* InputDetailsTableViewController.h */,
 				59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */,
+				18DBA2931CCB9172006FD8DB /* GraphViewController.h */,
+				18DBA2941CCB9172006FD8DB /* GraphViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -238,8 +243,8 @@
 				59402EB21CCB78FD003C883D /* Sources */,
 				59402EB31CCB78FD003C883D /* Frameworks */,
 				59402EB41CCB78FD003C883D /* Resources */,
-				D0406DC7B018E96300779D7E /* Embed Pods Frameworks */,
 				5727BAC2834607B43ADC7A35 /* Copy Pods Resources */,
+				DC0D125554CC78F5C981D498 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -386,7 +391,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D0406DC7B018E96300779D7E /* Embed Pods Frameworks */ = {
+		DC0D125554CC78F5C981D498 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -411,6 +416,7 @@
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
 				59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */,
+				18DBA2951CCB9172006FD8DB /* GraphViewController.m in Sources */,
 				59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */,
 				59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */,
 				59402EBB1CCB78FD003C883D /* main.m in Sources */,
