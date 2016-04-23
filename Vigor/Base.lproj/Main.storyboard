@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eAB-kQ-P5g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NH7-ye-5eO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -372,13 +372,36 @@
                         <viewControllerLayoutGuide type="top" id="UFJ-Qj-IjG"/>
                         <viewControllerLayoutGuide type="bottom" id="a8j-2W-mUc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8d6-VN-TMa" customClass="LineChartView" customModule="Charts">
+                    <view key="view" contentMode="scaleToFill" id="8d6-VN-TMa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03D-I2-k7f" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="72" width="343" height="280"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="0Hs-xA-Ep4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="UFJ-Qj-IjG" secondAttribute="bottom" constant="8" id="WSf-zQ-sI1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="03D-I2-k7f" secondAttribute="trailing" id="Z23-6X-G01"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="03D-I2-k7f" secondAttribute="leading" id="gMY-Ei-09f"/>
+                            <constraint firstItem="a8j-2W-mUc" firstAttribute="top" secondItem="03D-I2-k7f" secondAttribute="bottom" constant="240" id="sjb-UO-QqQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sjb-UO-QqQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Xl1-S5-N3y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="chartView" destination="03D-I2-k7f" id="M17-85-Omh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRS-JP-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
