@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57857CE96023741B94670B60 /* libPods-Vigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */; };
 		59402EBB1CCB78FD003C883D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBA1CCB78FD003C883D /* main.m */; };
 		59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBD1CCB78FD003C883D /* AppDelegate.m */; };
-		59402EC11CCB78FD003C883D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EC01CCB78FD003C883D /* ViewController.m */; };
 		59402EC41CCB78FD003C883D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59402EC21CCB78FD003C883D /* Main.storyboard */; };
 		59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */; };
 		59402EC91CCB78FD003C883D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59402EC81CCB78FD003C883D /* Assets.xcassets */; };
 		59402ECC1CCB78FD003C883D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */; };
 		59402ED71CCB78FD003C883D /* VigorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402ED61CCB78FD003C883D /* VigorTests.m */; };
 		59402EE21CCB78FD003C883D /* VigorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EE11CCB78FD003C883D /* VigorUITests.m */; };
+		59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF61CCB7C2E003C883D /* InputTableViewCell.m */; };
+		59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2698BD35DD876B11EF302015 /* Pods-Vigor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.release.xcconfig"; sourceTree = "<group>"; };
 		59402EB61CCB78FD003C883D /* Vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59402EBA1CCB78FD003C883D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59402EBC1CCB78FD003C883D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59402EBD1CCB78FD003C883D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		59402EBF1CCB78FD003C883D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		59402EC01CCB78FD003C883D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		59402EC31CCB78FD003C883D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59402EC61CCB78FD003C883D /* Vigor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vigor.xcdatamodel; sourceTree = "<group>"; };
 		59402EC81CCB78FD003C883D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +54,12 @@
 		59402EDD1CCB78FD003C883D /* VigorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59402EE11CCB78FD003C883D /* VigorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VigorUITests.m; sourceTree = "<group>"; };
 		59402EE31CCB78FD003C883D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59402EF51CCB7C2E003C883D /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputTableViewCell.h; path = Views/Cells/InputTableViewCell.h; sourceTree = "<group>"; };
+		59402EF61CCB7C2E003C883D /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputTableViewCell.m; path = Views/Cells/InputTableViewCell.m; sourceTree = "<group>"; };
+		59402EF81CCB7D89003C883D /* InputDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputDetailsTableViewController.h; path = Controllers/InputDetailsTableViewController.h; sourceTree = "<group>"; };
+		59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputDetailsTableViewController.m; path = Controllers/InputDetailsTableViewController.m; sourceTree = "<group>"; };
+		92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.debug.xcconfig"; sourceTree = "<group>"; };
+		C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vigor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57857CE96023741B94670B60 /* libPods-Vigor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2AA8300FA3FAD770F8560B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		59402EAD1CCB78FD003C883D = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +103,8 @@
 				59402ED51CCB78FD003C883D /* VigorTests */,
 				59402EE01CCB78FD003C883D /* VigorUITests */,
 				59402EB71CCB78FD003C883D /* Products */,
+				A2A3F842952B4093580A0D26 /* Pods */,
+				2B2AA8300FA3FAD770F8560B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,15 +121,11 @@
 		59402EB81CCB78FD003C883D /* Vigor */ = {
 			isa = PBXGroup;
 			children = (
-				59402EBC1CCB78FD003C883D /* AppDelegate.h */,
-				59402EBD1CCB78FD003C883D /* AppDelegate.m */,
-				59402EBF1CCB78FD003C883D /* ViewController.h */,
-				59402EC01CCB78FD003C883D /* ViewController.m */,
-				59402EC21CCB78FD003C883D /* Main.storyboard */,
+				59402EF21CCB791D003C883D /* Model */,
+				59402EF11CCB7918003C883D /* Views */,
+				59402EF01CCB7912003C883D /* Controllers */,
+				59402EEF1CCB7902003C883D /* App Delegate */,
 				59402EC81CCB78FD003C883D /* Assets.xcassets */,
-				59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */,
-				59402ECD1CCB78FD003C883D /* Info.plist */,
-				59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */,
 				59402EB91CCB78FD003C883D /* Supporting Files */,
 			);
 			path = Vigor;
@@ -120,6 +134,7 @@
 		59402EB91CCB78FD003C883D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59402ECD1CCB78FD003C883D /* Info.plist */,
 				59402EBA1CCB78FD003C883D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +158,68 @@
 			path = VigorUITests;
 			sourceTree = "<group>";
 		};
+		59402EEF1CCB7902003C883D /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				59402EBC1CCB78FD003C883D /* AppDelegate.h */,
+				59402EBD1CCB78FD003C883D /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		59402EF01CCB7912003C883D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59402EF81CCB7D89003C883D /* InputDetailsTableViewController.h */,
+				59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		59402EF11CCB7918003C883D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59402EF41CCB7C09003C883D /* Cells */,
+				59402EF31CCB7948003C883D /* Launch */,
+				59402EC21CCB78FD003C883D /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		59402EF21CCB791D003C883D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		59402EF31CCB7948003C883D /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		59402EF41CCB7C09003C883D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				59402EF51CCB7C2E003C883D /* InputTableViewCell.h */,
+				59402EF61CCB7C2E003C883D /* InputTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		A2A3F842952B4093580A0D26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */,
+				2698BD35DD876B11EF302015 /* Pods-Vigor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59402EE61CCB78FD003C883D /* Build configuration list for PBXNativeTarget "Vigor" */;
 			buildPhases = (
+				AD8AAB74AA22C54A442775D4 /* Check Pods Manifest.lock */,
 				59402EB21CCB78FD003C883D /* Sources */,
 				59402EB31CCB78FD003C883D /* Frameworks */,
 				59402EB41CCB78FD003C883D /* Resources */,
+				D0406DC7B018E96300779D7E /* Embed Pods Frameworks */,
+				5727BAC2834607B43ADC7A35 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,14 +348,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5727BAC2834607B43ADC7A35 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vigor/Pods-Vigor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD8AAB74AA22C54A442775D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0406DC7B018E96300779D7E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vigor/Pods-Vigor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59402EB21CCB78FD003C883D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59402EC11CCB78FD003C883D /* ViewController.m in Sources */,
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
+				59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */,
+				59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */,
 				59402EBB1CCB78FD003C883D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +546,7 @@
 		};
 		59402EE71CCB78FD003C883D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vigor/Info.plist;
@@ -428,6 +558,7 @@
 		};
 		59402EE81CCB78FD003C883D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2698BD35DD876B11EF302015 /* Pods-Vigor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vigor/Info.plist;
@@ -502,6 +633,7 @@
 				59402EE81CCB78FD003C883D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59402EE91CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +642,7 @@
 				59402EEB1CCB78FD003C883D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59402EEC1CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +651,7 @@
 				59402EEE1CCB78FD003C883D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

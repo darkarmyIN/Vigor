@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  InputDetailsTableViewController.h
 //  Vigor
 //
 //  Created by Avikant Saini on 4/23/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface InputDetailsTableViewController : UITableViewController
 
 @end
-
