@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59402EBB1CCB78FD003C883D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBA1CCB78FD003C883D /* main.m */; };
+		59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EBD1CCB78FD003C883D /* AppDelegate.m */; };
+		59402EC11CCB78FD003C883D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EC01CCB78FD003C883D /* ViewController.m */; };
+		59402EC41CCB78FD003C883D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59402EC21CCB78FD003C883D /* Main.storyboard */; };
+		59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */; };
+		59402EC91CCB78FD003C883D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59402EC81CCB78FD003C883D /* Assets.xcassets */; };
+		59402ECC1CCB78FD003C883D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */; };
+		59402ED71CCB78FD003C883D /* VigorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402ED61CCB78FD003C883D /* VigorTests.m */; };
+		59402EE21CCB78FD003C883D /* VigorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EE11CCB78FD003C883D /* VigorUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59402ED31CCB78FD003C883D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59402EAE1CCB78FD003C883D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59402EB51CCB78FD003C883D;
+			remoteInfo = Vigor;
+		};
+		59402EDE1CCB78FD003C883D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59402EAE1CCB78FD003C883D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59402EB51CCB78FD003C883D;
+			remoteInfo = Vigor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59402EB61CCB78FD003C883D /* Vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59402EBA1CCB78FD003C883D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59402EBC1CCB78FD003C883D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		59402EBD1CCB78FD003C883D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59402EBF1CCB78FD003C883D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		59402EC01CCB78FD003C883D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		59402EC31CCB78FD003C883D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59402EC61CCB78FD003C883D /* Vigor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vigor.xcdatamodel; sourceTree = "<group>"; };
+		59402EC81CCB78FD003C883D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59402ECB1CCB78FD003C883D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59402ECD1CCB78FD003C883D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59402ED21CCB78FD003C883D /* VigorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59402ED61CCB78FD003C883D /* VigorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VigorTests.m; sourceTree = "<group>"; };
+		59402ED81CCB78FD003C883D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59402EDD1CCB78FD003C883D /* VigorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59402EE11CCB78FD003C883D /* VigorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VigorUITests.m; sourceTree = "<group>"; };
+		59402EE31CCB78FD003C883D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59402EB31CCB78FD003C883D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402ECF1CCB78FD003C883D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402EDA1CCB78FD003C883D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59402EAD1CCB78FD003C883D = {
+			isa = PBXGroup;
+			children = (
+				59402EB81CCB78FD003C883D /* Vigor */,
+				59402ED51CCB78FD003C883D /* VigorTests */,
+				59402EE01CCB78FD003C883D /* VigorUITests */,
+				59402EB71CCB78FD003C883D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59402EB71CCB78FD003C883D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59402EB61CCB78FD003C883D /* Vigor.app */,
+				59402ED21CCB78FD003C883D /* VigorTests.xctest */,
+				59402EDD1CCB78FD003C883D /* VigorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59402EB81CCB78FD003C883D /* Vigor */ = {
+			isa = PBXGroup;
+			children = (
+				59402EBC1CCB78FD003C883D /* AppDelegate.h */,
+				59402EBD1CCB78FD003C883D /* AppDelegate.m */,
+				59402EBF1CCB78FD003C883D /* ViewController.h */,
+				59402EC01CCB78FD003C883D /* ViewController.m */,
+				59402EC21CCB78FD003C883D /* Main.storyboard */,
+				59402EC81CCB78FD003C883D /* Assets.xcassets */,
+				59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */,
+				59402ECD1CCB78FD003C883D /* Info.plist */,
+				59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */,
+				59402EB91CCB78FD003C883D /* Supporting Files */,
+			);
+			path = Vigor;
+			sourceTree = "<group>";
+		};
+		59402EB91CCB78FD003C883D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59402EBA1CCB78FD003C883D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59402ED51CCB78FD003C883D /* VigorTests */ = {
+			isa = PBXGroup;
+			children = (
+				59402ED61CCB78FD003C883D /* VigorTests.m */,
+				59402ED81CCB78FD003C883D /* Info.plist */,
+			);
+			path = VigorTests;
+			sourceTree = "<group>";
+		};
+		59402EE01CCB78FD003C883D /* VigorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59402EE11CCB78FD003C883D /* VigorUITests.m */,
+				59402EE31CCB78FD003C883D /* Info.plist */,
+			);
+			path = VigorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59402EB51CCB78FD003C883D /* Vigor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59402EE61CCB78FD003C883D /* Build configuration list for PBXNativeTarget "Vigor" */;
+			buildPhases = (
+				59402EB21CCB78FD003C883D /* Sources */,
+				59402EB31CCB78FD003C883D /* Frameworks */,
+				59402EB41CCB78FD003C883D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vigor;
+			productName = Vigor;
+			productReference = 59402EB61CCB78FD003C883D /* Vigor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59402ED11CCB78FD003C883D /* VigorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59402EE91CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorTests" */;
+			buildPhases = (
+				59402ECE1CCB78FD003C883D /* Sources */,
+				59402ECF1CCB78FD003C883D /* Frameworks */,
+				59402ED01CCB78FD003C883D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59402ED41CCB78FD003C883D /* PBXTargetDependency */,
+			);
+			name = VigorTests;
+			productName = VigorTests;
+			productReference = 59402ED21CCB78FD003C883D /* VigorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59402EDC1CCB78FD003C883D /* VigorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59402EEC1CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorUITests" */;
+			buildPhases = (
+				59402ED91CCB78FD003C883D /* Sources */,
+				59402EDA1CCB78FD003C883D /* Frameworks */,
+				59402EDB1CCB78FD003C883D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59402EDF1CCB78FD003C883D /* PBXTargetDependency */,
+			);
+			name = VigorUITests;
+			productName = VigorUITests;
+			productReference = 59402EDD1CCB78FD003C883D /* VigorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59402EAE1CCB78FD003C883D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dark Army";
+				TargetAttributes = {
+					59402EB51CCB78FD003C883D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					59402ED11CCB78FD003C883D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 59402EB51CCB78FD003C883D;
+					};
+					59402EDC1CCB78FD003C883D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 59402EB51CCB78FD003C883D;
+					};
+				};
+			};
+			buildConfigurationList = 59402EB11CCB78FD003C883D /* Build configuration list for PBXProject "Vigor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59402EAD1CCB78FD003C883D;
+			productRefGroup = 59402EB71CCB78FD003C883D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59402EB51CCB78FD003C883D /* Vigor */,
+				59402ED11CCB78FD003C883D /* VigorTests */,
+				59402EDC1CCB78FD003C883D /* VigorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59402EB41CCB78FD003C883D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59402ECC1CCB78FD003C883D /* LaunchScreen.storyboard in Resources */,
+				59402EC91CCB78FD003C883D /* Assets.xcassets in Resources */,
+				59402EC41CCB78FD003C883D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402ED01CCB78FD003C883D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402EDB1CCB78FD003C883D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59402EB21CCB78FD003C883D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59402EC11CCB78FD003C883D /* ViewController.m in Sources */,
+				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
+				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
+				59402EBB1CCB78FD003C883D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402ECE1CCB78FD003C883D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59402ED71CCB78FD003C883D /* VigorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59402ED91CCB78FD003C883D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59402EE21CCB78FD003C883D /* VigorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59402ED41CCB78FD003C883D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59402EB51CCB78FD003C883D /* Vigor */;
+			targetProxy = 59402ED31CCB78FD003C883D /* PBXContainerItemProxy */;
+		};
+		59402EDF1CCB78FD003C883D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59402EB51CCB78FD003C883D /* Vigor */;
+			targetProxy = 59402EDE1CCB78FD003C883D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59402EC21CCB78FD003C883D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59402EC31CCB78FD003C883D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59402ECA1CCB78FD003C883D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59402ECB1CCB78FD003C883D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59402EE41CCB78FD003C883D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59402EE51CCB78FD003C883D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59402EE71CCB78FD003C883D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vigor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.Vigor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		59402EE81CCB78FD003C883D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vigor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.Vigor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		59402EEA1CCB78FD003C883D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VigorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.VigorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vigor.app/Vigor";
+			};
+			name = Debug;
+		};
+		59402EEB1CCB78FD003C883D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VigorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.VigorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vigor.app/Vigor";
+			};
+			name = Release;
+		};
+		59402EED1CCB78FD003C883D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VigorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.VigorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vigor;
+			};
+			name = Debug;
+		};
+		59402EEE1CCB78FD003C883D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VigorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.VigorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vigor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59402EB11CCB78FD003C883D /* Build configuration list for PBXProject "Vigor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59402EE41CCB78FD003C883D /* Debug */,
+				59402EE51CCB78FD003C883D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59402EE61CCB78FD003C883D /* Build configuration list for PBXNativeTarget "Vigor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59402EE71CCB78FD003C883D /* Debug */,
+				59402EE81CCB78FD003C883D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59402EE91CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59402EEA1CCB78FD003C883D /* Debug */,
+				59402EEB1CCB78FD003C883D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59402EEC1CCB78FD003C883D /* Build configuration list for PBXNativeTarget "VigorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59402EED1CCB78FD003C883D /* Debug */,
+				59402EEE1CCB78FD003C883D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59402EC61CCB78FD003C883D /* Vigor.xcdatamodel */,
+			);
+			currentVersion = 59402EC61CCB78FD003C883D /* Vigor.xcdatamodel */;
+			path = Vigor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 59402EAE1CCB78FD003C883D /* Project object */;
+}
