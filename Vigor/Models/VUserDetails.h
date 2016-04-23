@@ -28,6 +28,8 @@ typedef NS_ENUM(NSUInteger, VUserSex) {
 // male or female
 @property (nonatomic) VUserSex sex;
 
+- (void)saveToDefaults;
+
 
 @property (nonatomic) CGFloat bmi;
 

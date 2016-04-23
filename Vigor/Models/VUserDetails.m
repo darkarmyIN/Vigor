@@ -13,12 +13,25 @@
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		self.height = 150;
-		self.weight = 60.2;
-		self.age = 18;
-		self.sex = VUserSexMale;
+		if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUHeight"]) {
+			self.height = [[NSUserDefaults standardUserDefaults] floatForKey:@"VUHeight"];
+	//		self.height = 150;
+			self.weight = [[NSUserDefaults standardUserDefaults] floatForKey:@"VUWeight"];
+	//		self.weight = 60.2;
+			self.age = [[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"];
+	//		self.age = 18;
+			self.sex = [[NSUserDefaults standardUserDefaults] integerForKey:@"VUSex"];
+	//		self.sex = VUserSexMale;
+		}
 	}
 	return self;
+}
+
+- (void)saveToDefaults {
+	[[NSUserDefaults standardUserDefaults] setFloat:self.height forKey:@"VUHeight"];
+	[[NSUserDefaults standardUserDefaults] setFloat:self.weight forKey:@"VUWeight"];
+	[[NSUserDefaults standardUserDefaults] setInteger:self.age forKey:@"VUAge"];
+	[[NSUserDefaults standardUserDefaults] setInteger:self.sex forKey:@"VUSex"];
 }
 
 - (CGFloat)bmi {

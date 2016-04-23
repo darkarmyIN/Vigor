@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BMRDetailsViewController.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +33,19 @@
              NSLog(@"Kinvey Ping Failed");
          }
      }];
+	
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+	UINavigationController *navc;
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0) {
+		navc = [storyboard instantiateViewControllerWithIdentifier:@"BMRDetailsNav"];
+		BMRDetailsViewController *bmrvc = [navc.viewControllers firstObject];
+		bmrvc.details = [[VUserDetails alloc] init];
+	}
+	else {
+		navc = [storyboard instantiateViewControllerWithIdentifier:@"InputVCNav"];
+	}
+	self.window.rootViewController = navc;
+	
 	return YES;
 }
 

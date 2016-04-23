@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	if (self.details) {
+		[self updateIntake:1.22];
+	}
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +63,11 @@
 	_bmrCountLabel.text = [NSString stringWithFormat:@"%.2f KCal", self.details.bmr];
 	_tciCountLabel.text = [NSString stringWithFormat:@"%.2f KCal", totalIntake];
 }
+
+- (IBAction)giveFeedbackAction:(id)sender {
+	
+}
+
 
 /*
 #pragma mark - Navigation

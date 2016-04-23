@@ -32,6 +32,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +68,8 @@
 	else
 		details.sex = VUserSexMale;
 	
+	[details saveToDefaults];
+	
 	NSLog(@"%@", details);
 	
 }
@@ -79,7 +82,7 @@
 	
 	if (indexPath.section == tableView.numberOfSections - 1) {
 		// Done!
-//		[self doneAction:self];
+		[self doneAction:self];
 	}
 	
 }

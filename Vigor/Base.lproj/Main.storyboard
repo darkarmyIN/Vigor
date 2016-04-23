@@ -207,7 +207,7 @@
             </objects>
             <point key="canvasLocation" x="1034.5" y="435.5"/>
         </scene>
-        <!--Details View Controller-->
+        <!--BMR Details-->
         <scene sceneID="U3Q-SW-zXi">
             <objects>
                 <viewController id="OFz-lt-rwy" customClass="BMRDetailsViewController" sceneMemberID="viewController">
@@ -270,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0000 KCal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-gX-d0w">
-                                <rect key="frame" x="167" y="507" width="192" height="32"/>
+                                <rect key="frame" x="247" y="507" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="pCP-8l-rmD"/>
                                 </constraints>
@@ -296,8 +296,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Calorie Intake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGw-zf-FI9">
-                                <rect key="frame" x="16" y="507" width="143.5" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Total Calorie Intake" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGw-zf-FI9">
+                                <rect key="frame" x="16" y="507" width="223" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="9sc-E5-USU"/>
                                 </constraints>
@@ -305,6 +305,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfB-mU-gne">
+                                <rect key="frame" x="110" y="629" width="154" height="30"/>
+                                <state key="normal" title="Give Trainer Feedback"/>
+                                <connections>
+                                    <action selector="giveFeedbackAction:" destination="OFz-lt-rwy" eventType="touchUpInside" id="RTE-LK-znZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -329,7 +336,9 @@
                             <constraint firstItem="TmU-ue-P7V" firstAttribute="width" secondItem="IM3-Ni-ent" secondAttribute="width" id="UL0-8n-IYC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lLx-Pi-6Az" secondAttribute="trailing" id="WRf-3h-7Eq"/>
                             <constraint firstItem="WNh-TW-9gI" firstAttribute="width" secondItem="IM3-Ni-ent" secondAttribute="width" id="YOT-S8-MCZ"/>
+                            <constraint firstItem="XfB-mU-gne" firstAttribute="centerX" secondItem="SEJ-Ce-HWs" secondAttribute="centerX" id="aCp-fg-xNs"/>
                             <constraint firstItem="K7o-gX-d0w" firstAttribute="leading" secondItem="qGw-zf-FI9" secondAttribute="trailing" constant="8" id="cC3-re-hUu"/>
+                            <constraint firstItem="Oei-EW-u24" firstAttribute="top" secondItem="XfB-mU-gne" secondAttribute="bottom" constant="8" id="cqd-L7-TbQ"/>
                             <constraint firstItem="lLx-Pi-6Az" firstAttribute="top" secondItem="u2n-tL-HDZ" secondAttribute="bottom" constant="24" id="dKr-jk-nPS"/>
                             <constraint firstItem="Poh-dK-7Hs" firstAttribute="leading" secondItem="IM3-Ni-ent" secondAttribute="trailing" constant="8" id="ebf-N4-JdJ"/>
                             <constraint firstItem="r99-M0-yXW" firstAttribute="leading" secondItem="TmU-ue-P7V" secondAttribute="trailing" constant="8" id="f16-DQ-fdh"/>
@@ -347,7 +356,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="xPH-Lw-PQo"/>
+                    <navigationItem key="navigationItem" title="BMR Details" id="xPH-Lw-PQo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bmrCountLabel" destination="I2S-5N-umb" id="tAJ-yP-cpZ"/>
@@ -410,7 +419,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GGr-sl-rKh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eAB-kQ-P5g" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InputVCNav" automaticallyAdjustsScrollViewInsets="NO" id="eAB-kQ-P5g" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6hp-8B-JrS">
@@ -448,7 +457,7 @@
         <!--Navigation Controller-->
         <scene sceneID="A0m-3A-Nnx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ouo-74-aRC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BMRDetailsNav" automaticallyAdjustsScrollViewInsets="NO" id="ouo-74-aRC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KGa-r2-WiB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
