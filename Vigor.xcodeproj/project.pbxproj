@@ -21,6 +21,8 @@
 		59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */; };
 		59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EFD1CCB83B9003C883D /* VUserDetails.m */; };
 		59402F011CCB9F66003C883D /* BMRDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402F001CCB9F66003C883D /* BMRDetailsViewController.m */; };
+		59402F121CCBEE26003C883D /* Feedback+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402F0F1CCBEE26003C883D /* Feedback+CoreDataProperties.m */; };
+		59402F131CCBEE26003C883D /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402F111CCBEE26003C883D /* Feedback.m */; };
 		C19E3BEE30117CD98AAC04B7 /* Pods_Vigor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FBA265FC8CD058F1F7667F /* Pods_Vigor.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,10 @@
 		59402EFD1CCB83B9003C883D /* VUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VUserDetails.m; path = Models/VUserDetails.m; sourceTree = "<group>"; };
 		59402EFF1CCB9F66003C883D /* BMRDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BMRDetailsViewController.h; path = Controllers/BMRDetailsViewController.h; sourceTree = "<group>"; };
 		59402F001CCB9F66003C883D /* BMRDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BMRDetailsViewController.m; path = Controllers/BMRDetailsViewController.m; sourceTree = "<group>"; };
+		59402F0E1CCBEE26003C883D /* Feedback+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Feedback+CoreDataProperties.h"; path = "Models/Feedback+CoreDataProperties.h"; sourceTree = "<group>"; };
+		59402F0F1CCBEE26003C883D /* Feedback+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Feedback+CoreDataProperties.m"; path = "Models/Feedback+CoreDataProperties.m"; sourceTree = "<group>"; };
+		59402F101CCBEE26003C883D /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = Models/Feedback.h; sourceTree = "<group>"; };
+		59402F111CCBEE26003C883D /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feedback.m; path = Models/Feedback.m; sourceTree = "<group>"; };
 		92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +213,10 @@
 		59402EF21CCB791D003C883D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				59402F0E1CCBEE26003C883D /* Feedback+CoreDataProperties.h */,
+				59402F0F1CCBEE26003C883D /* Feedback+CoreDataProperties.m */,
+				59402F101CCBEE26003C883D /* Feedback.h */,
+				59402F111CCBEE26003C883D /* Feedback.m */,
 				59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */,
 				59402EFC1CCB83B9003C883D /* VUserDetails.h */,
 				59402EFD1CCB83B9003C883D /* VUserDetails.m */,
@@ -424,7 +434,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
+				59402F131CCBEE26003C883D /* Feedback.m in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
+				59402F121CCBEE26003C883D /* Feedback+CoreDataProperties.m in Sources */,
 				59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */,
 				59402F011CCB9F66003C883D /* BMRDetailsViewController.m in Sources */,
 				18DBA2951CCB9172006FD8DB /* GraphViewController.m in Sources */,

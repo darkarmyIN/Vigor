@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NH7-ye-5eO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eAB-kQ-P5g">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -356,7 +356,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="BMR Details" id="xPH-Lw-PQo"/>
+                    <navigationItem key="navigationItem" title="BMR Details" id="xPH-Lw-PQo">
+                        <barButtonItem key="rightBarButtonItem" title="Check" id="TfE-lT-PY2">
+                            <connections>
+                                <segue destination="NH7-ye-5eO" kind="presentation" id="yxm-YQ-4hi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bmrCountLabel" destination="I2S-5N-umb" id="tAJ-yP-cpZ"/>
@@ -386,15 +392,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03D-I2-k7f" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="72" width="343" height="280"/>
+                                <rect key="frame" x="16" y="419" width="343" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="0Hs-xA-Ep4"/>
+                                    <constraint firstAttribute="height" constant="240" id="uxg-2l-xUQ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Hs-xA-Ep4"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="a8j-2W-mUc" firstAttribute="top" secondItem="03D-I2-k7f" secondAttribute="bottom" constant="8" id="9IE-Ho-3Lv"/>
                             <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="UFJ-Qj-IjG" secondAttribute="bottom" constant="8" id="WSf-zQ-sI1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="03D-I2-k7f" secondAttribute="trailing" id="Z23-6X-G01"/>
                             <constraint firstAttribute="leadingMargin" secondItem="03D-I2-k7f" secondAttribute="leading" id="gMY-Ei-09f"/>
@@ -402,19 +415,34 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="WSf-zQ-sI1"/>
                                 <exclude reference="sjb-UO-QqQ"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Xl1-S5-N3y"/>
+                    <navigationItem key="navigationItem" id="Xl1-S5-N3y">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="tzy-GW-6F7">
+                            <rect key="frame" x="72.5" y="7" width="230" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Me"/>
+                                <segment title="Community"/>
+                            </segments>
+                            <connections>
+                                <action selector="updateSegmentedControl:" destination="UE4-fZ-lfg" eventType="valueChanged" id="vON-Mm-XoF"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="chartView" destination="03D-I2-k7f" id="M17-85-Omh"/>
+                        <outlet property="segmentedControl" destination="tzy-GW-6F7" id="upQ-9i-p9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRS-JP-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517.5" y="1211.5"/>
+            <point key="canvasLocation" x="2985.5" y="435.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GGr-sl-rKh">
@@ -452,7 +480,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpQ-ki-dhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.5" y="1211.5"/>
+            <point key="canvasLocation" x="2502.5" y="435.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A0m-3A-Nnx">

@@ -79,7 +79,7 @@
     ORKFormItem *feedbackItem = [[ORKFormItem alloc] initWithIdentifier:@"formItem" text:@"Give Your Feedback" answerFormat:[ORKAnswerFormat textAnswerFormat] optional:NO];
     fillForm.formItems = @[feedbackItem];
     
-    ORKOrderedTask *task = [[ORKOrderedTask alloc] initWithIdentifier:@"task" steps:@[instructUser, fillForm]];
+    ORKOrderedTask *task = [[ORKOrderedTask alloc] initWithIdentifier:@"task" steps:@[fillForm]];
     
     ORKTaskViewController *taskViewController =
     [[ORKTaskViewController alloc] initWithTask:task taskRunUUID:nil];
@@ -93,9 +93,44 @@
     ORKTaskResult *feedbackComplete = [taskViewController result];
     
     ORKStepResult *feedbackProvided = (ORKStepResult *) [feedbackComplete.results lastObject];
+	
+	NSString *feedbackString = [[feedbackProvided.results firstObject] valueForKey:@"answer"];
     
     // obtain input value from [[finalResult.results firstObject] valueForKey:@"answer"]
     // send this value to haven api, then send results of that to kinvey
+	
+	NSURL *URL = [NSURL URLWithString:@"https://api.havenondemand.com/1/api/sync/analyzesentiment/v1"];
+	
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+	request.HTTPMethod = @"POST";
+	
+	NSString *httpBody = [NSString stringWithFormat:@"apikey=72e6bddf-7f53-4779-90e9-7b27688792a5&text=%@", feedbackString];
+	request.HTTPBody = [httpBody dataUsingEncoding:NSUTF8StringEncoding];
+	
+	[[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		
+		if (error)
+			return;
+		
+		@try {
+			id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+//			NSLog(@"analyzesentiment:\n%@", jsonData);
+			
+			CGFloat aggscore = [[jsonData valueForKeyPath:@"aggregate.score"] doubleValue];
+			NSString *aggString = [jsonData valueForKeyPath:@"aggregate.sentiment"];
+			
+			NSLog(@"Agg score = %.4f | Agg string = %@", aggscore, aggString);
+			
+			// Save to core data
+			[Feedback createNewFeedbackWithDate:[NSDate date] review:feedbackString value:aggscore];
+			
+			// Push to server
+			
+		} @catch (NSException *exception) {
+			
+		}
+		
+	}] resume];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

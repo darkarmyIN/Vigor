@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet LineChartView *chartView;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+
 @end
 
 @implementation GraphViewController {
@@ -42,62 +45,47 @@
     leftAxis.drawZeroLineEnabled = NO;
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
 	
-//	_chartView.leftAxis.enabled = NO;
-//    _chartView.rightAxis.enabled = NO;
-	
     _chartView.legend.form = ChartLegendFormLine;
 	
-	[self setDataCount:20 range:10];
-    
     [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
-    
+	
+	[self updateSegmentedControl:self.segmentedControl];
+	
 }
 
-- (void)setDataCount:(int)count range:(double)range
-{
-    NSMutableArray *xAxisValues = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 7; i++)
-    {
-        [xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i]]];
-    }
-    
-    NSMutableArray *yAxisValues = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 7; i++)
-    {
-        double val = (double) (arc4random_uniform(200))/100 - 1;
-        [yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
-    }
-    
-    LineChartDataSet *dataSet = nil;
-
+- (IBAction)updateSegmentedControl:(id)sender {
+	
+	NSMutableArray *xAxisValues = [[NSMutableArray alloc] init];
+	NSMutableArray *yAxisValues = [[NSMutableArray alloc] init];
+	
+	NSInteger index = [sender selectedSegmentIndex];
+	
+	if (index == 0) {
+		// Core data
+		NSMutableArray *feedbacks = [Feedback getAllFeedbacks];
+		
+		for (int i = 0; i < feedbacks.count; i++)
+		{
+			Feedback *fback = [feedbacks objectAtIndex:i];
+			[xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
+			[yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.value.floatValue xIndex:i]];
+		}
+		
+	}
+	else {
+		// Kinvey
+	}
+	
+	LineChartDataSet *dataSet = nil;
+	
 	dataSet = [[LineChartDataSet alloc] initWithYVals:yAxisValues label:@"Satisfaction"];
 	
-//	dataSet.lineDashLengths = @[@5.f, @5.f];
-//	dataSet.highlightLineDashLengths = @[@5.f, @5.f];
 	[dataSet setColor:UIColor.blackColor];
 	[dataSet setCircleColor:UIColor.blackColor];
 	dataSet.lineWidth = 1.0;
 	dataSet.circleRadius = 2.5;
 	dataSet.drawCircleHoleEnabled = YES;
 	dataSet.valueFont = [UIFont systemFontOfSize:9.f];
-//  dataSet.fillAlpha = 65/255.0;
-//  dataSet.fillColor = [UIColor blackColor];
-	
-//	NSArray *gradientColors = @[
-//								(id)[ChartColorTemplates colorFromString:@"#00ff0000"].CGColor,
-//								(id)[ChartColorTemplates colorFromString:@"#ffff0000"].CGColor
-//								];
-//	CGGradientRef gradient = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
-//	
-//	dataSet.fillAlpha = 1.f;
-//	dataSet.fill = [ChartFill fillWithLinearGradient:gradient angle:90.f];
-//	dataSet.drawFilledEnabled = YES;
-	
-//	dataSet.fill = [ChartFill fill]
-	
-//	CGGradientRelease(gradient);
 	
 	NSMutableArray *dataSets = [[NSMutableArray alloc] init];
 	[dataSets addObject:dataSet];
@@ -105,8 +93,8 @@
 	LineChartData *data = [[LineChartData alloc] initWithXVals:xAxisValues dataSets:dataSets];
 	
 	_chartView.data = data;
-	
 }
+
 
 - (void)didReceiveMemoryWarning
 {

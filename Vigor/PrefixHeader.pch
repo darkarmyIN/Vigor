@@ -25,6 +25,8 @@
 @import Charts;
 
 #import "VUserDetails.h"
+#import "AppDelegate.h"
+#import "Feedback.h"
 
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height
