@@ -35,16 +35,17 @@
      }];
 	
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-	UINavigationController *navc;
 	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0) {
-		navc = [storyboard instantiateViewControllerWithIdentifier:@"BMRDetailsNav"];
+		UITabBarController *tabVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
+		UINavigationController *navc = [tabVC.viewControllers firstObject];
 		BMRDetailsViewController *bmrvc = [navc.viewControllers firstObject];
 		bmrvc.details = [[VUserDetails alloc] init];
+		self.window.rootViewController = tabVC;
 	}
 	else {
-		navc = [storyboard instantiateViewControllerWithIdentifier:@"InputVCNav"];
+		UINavigationController *navc = [storyboard instantiateViewControllerWithIdentifier:@"InputVCNav"];
+		self.window.rootViewController = navc;
 	}
-	self.window.rootViewController = navc;
 	
 	return YES;
 }

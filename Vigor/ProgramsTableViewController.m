@@ -28,6 +28,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     programNames = @[@"Insanity Workout", @"Greek God Program", @"Vesuvius Regimen", @"Hercules Task Marathon", @"Sorte Workout"];
+	
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +54,7 @@
 {
     static NSString *cellId = @"Cell";
     ProgramNamesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProgramNamesTableViewCell" owner:self options:nil];
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProgramName" owner:self options:nil];
     cell = [nib objectAtIndex:0];
     if (cell == nil)
     {
@@ -66,7 +68,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	[[NSUserDefaults standardUserDefaults] setObject:[programNames objectAtIndex:indexPath.row] forKey:@"CurrentProgram"];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 60.f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section

@@ -91,10 +91,10 @@
 	
 	self.pieview.dataSource = self;
 	self.pieview.showsTitleAboveChart = YES;
-	self.pieview.text = @"PIE VIEW";
+	self.pieview.text = @"Feedback";
 	self.pieview.lineWidth = 4.0;
-	[self.pieview animateWithDuration:1.0];
-    
+//	[self.pieview animateWithDuration:1.0];
+	
     [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
 	
 	[super viewDidAppear:animated];
@@ -117,7 +117,9 @@
         else
         {
             //got all events back from server -- update graph
-            kinveyDataArray = [NSMutableArray arrayWithArray:objectsOrNil];
+			NSString *pgrmString = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"];
+			kinveyDataArray = [[objectsOrNil filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"programName == %@", pgrmString]] mutableCopy];
+//            kinveyDataArray = [NSMutableArray arrayWithArray:objectsOrNil];
         }
     } withProgressBlock:nil];
     
@@ -129,8 +131,8 @@
 	NSMutableArray *xAxisValues = [[NSMutableArray alloc] init];
 	NSMutableArray *yAxisValues = [[NSMutableArray alloc] init];
 	
-	posCount = 1;
-	negCount = 1;
+	posCount = 0.0;
+	negCount = 0.0;
 	
 	NSInteger index = [sender selectedSegmentIndex];
 	
@@ -144,8 +146,12 @@
 			Feedback *fback = [feedbacks objectAtIndex:i];
 			[xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
 			[yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.value.floatValue xIndex:i]];
-			if ([fback.review isEqualToString:@"positive"]) posCount++;
-			if ([fback.review isEqualToString:@"negative"]) negCount++;
+//			if ([fback.review isEqualToString:@"positive"]) posCount+=1;
+//			if ([fback.review isEqualToString:@"negative"]) negCount+=1;
+			if (fback.value.floatValue > 0.2)
+				posCount += 1;
+			if (fback.value.floatValue < -0.2)
+				negCount += 1;
 		}
 
 		
@@ -157,14 +163,23 @@
             OnlineFeedback *fback = [kinveyDataArray objectAtIndex:i];
             [xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
             [yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.valueForFeedback.floatValue xIndex:i]];
-			if ([fback.review isEqualToString:@"positive"]) posCount++;
-			if ([fback.review isEqualToString:@"negative"]) negCount++;
+//			if ([fback.review isEqualToString:@"positive"]) posCount+=1;
+//			if ([fback.review isEqualToString:@"negative"]) negCount+=1;
+			if (fback.valueForFeedback.floatValue > 0.2)
+				posCount += 1;
+			if (fback.valueForFeedback.floatValue < -0.2)
+				negCount += 1;
         }
         
 	}
 	
 	one = (posCount + 0.0)/(posCount + negCount + 1.0);
 	two = (negCount + 0.0)/(posCount + negCount + 1.0);
+	
+//	if (one == 0.0)
+//		one = 1/3.0;
+//	if (two == 0.0)
+//		two = 1/3.0;
 	
 	NSLog(@"one : %f , two : %f",one,two);
 	
@@ -173,7 +188,7 @@
 	dataSet = [[LineChartDataSet alloc] initWithYVals:yAxisValues label:@"Satisfaction"];
 	
 	[dataSet setColor:UIColor.blackColor];
-	[dataSet setCircleColor:UIColor.blackColor];
+	[dataSet setCircleColor:UIColor.darkGrayColor];
 	dataSet.lineWidth = 1.0;
 	dataSet.circleRadius = 2.5;
 	dataSet.drawCircleHoleEnabled = YES;
@@ -189,6 +204,7 @@
     
     self.pieview.dataSource = self;
     [self.pieview animateWithDuration:1.0];
+	
     [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
 }
 
@@ -238,11 +254,22 @@
 
 - (NSInteger)numberOfSegmentsInPieChartView:(ORKPieChartView *)pieChartView
 {
+	if (one == 0 && two == 0)
+		return 1;
+	if (one == 0 || two == 0)
+		return 2;
 	return 3;
 }
 
 - (CGFloat)pieChartView:(ORKPieChartView *)pieChartView valueForSegmentAtIndex:(NSInteger)index
 {
+	if (one == 0 && two == 0)
+		return 1;
+	if (one == 0 || two == 0) {
+		if (index == 0)
+			return one + two;
+		return 1.0 - one - two;
+	}
     if (index == 0)
         return one;
     else if (index == 1)
@@ -252,9 +279,9 @@
 
 - (UIColor *)pieChartView:(ORKPieChartView *)pieChartView colorForSegmentAtIndex:(NSInteger)index
 {
-	if (index == 0) return [UIColor blueColor];
-	else if (index == 1) return [UIColor greenColor];
-	return [UIColor redColor];
+	if (index == 0) return GLOBAL_BLUE_COLOR;
+	else if (index == 1) return GLOBAL_GREEN_COLOR;
+	return GLOBAL_RED_COLOR;
 }
 
 - (NSString *)pieChartView:(ORKPieChartView *)pieChartView titleForSegmentAtIndex:(NSInteger)index

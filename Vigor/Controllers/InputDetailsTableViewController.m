@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ageField;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexSegControl;
+@property (weak, nonatomic) IBOutlet UILabel *currentPlanLabel;
 
 @end
 
@@ -32,7 +33,19 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0)
+		details = [[VUserDetails alloc] init];
+	
+	_heightField.text = [NSString stringWithFormat:@"%.2f", details.height];
+	_weightField.text = [NSString stringWithFormat:@"%.2f", details.weight];
+	_ageField.text = [NSString stringWithFormat:@"%li", details.age];
+	_sexSegControl.selectedSegmentIndex = (details.sex == VUserSexMale)?0:1;
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	_currentPlanLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +82,19 @@
 		details.sex = VUserSexMale;
 	
 	[details saveToDefaults];
+	
+	UITabBarController *tabVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
+	UINavigationController *navc = [tabVC.viewControllers firstObject];
+	BMRDetailsViewController *bdvc = [navc.viewControllers firstObject];
+	bdvc.details = details;
+	
+	[self presentViewController:tabVC animated:YES completion:^{
+		self.view.window.rootViewController = tabVC;
+	}];
+//
+//	[self dismissViewControllerAnimated:tabVC completion:^{
+//		self.view.window.rootViewController = tabVC;
+//	}];
 	
 	NSLog(@"%@", details);
 	
@@ -133,23 +159,5 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([segue.identifier isEqualToString:@"DoneDetailsSegue"]) {
-		UINavigationController *navc = [segue destinationViewController];
-		BMRDetailsViewController *bdvc = [navc.viewControllers firstObject];
-		details = [[VUserDetails alloc] init];
-		details.height = [_heightField.text doubleValue];
-		details.weight = [_weightField.text doubleValue];
-		details.age = [_ageField.text integerValue];
-		if ([_sexSegControl selectedSegmentIndex] == 2)
-			details.sex = VUserSexOther;
-		else if ([_sexSegControl selectedSegmentIndex] == 1)
-			details.sex = VUserSexFemale;
-		else
-			details.sex = VUserSexMale;
-		bdvc.details = details;
-	}
-}
 
 @end

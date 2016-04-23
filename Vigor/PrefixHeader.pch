@@ -41,6 +41,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xfcf9ee, 1.f)
 #define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0x48ac53, 1.f)
 
+#define GLOBAL_RED_COLOR UIColorFromRGBWithAlpha(0xDC4B3F, 1.f)
+#define GLOBAL_GREEN_COLOR UIColorFromRGBWithAlpha(0x39CB75, 1.f)
+#define GLOBAL_BLUE_COLOR UIColorFromRGBWithAlpha(0x3B9AD9, 1.f)
+
 #define SVHUD_SHOW dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD showWithStatus:@"Loading..."];});
 #define SVHUD_HIDE dispatch_async(dispatch_get_main_queue(),^{[SVProgressHUD dismiss];});
 
