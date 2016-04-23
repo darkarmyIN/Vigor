@@ -39,6 +39,31 @@
 - (IBAction)doneAction:(id)sender {
 	// Done
 	
+	if (_heightField.text.length < 1) {
+		SVHUD_FAILURE(@"Enter the height!")
+		return;
+	}
+	if (_weightField.text.length < 1) {
+		SVHUD_FAILURE(@"Enter the weight!")
+		return;
+	}
+	if (_ageField.text.length < 1) {
+		SVHUD_FAILURE(@"Enter the age!")
+		return;
+	}
+	
+	VUserDetails *details = [[VUserDetails alloc] init];
+	
+	details.height = [_heightField.text doubleValue];
+	details.weight = [_weightField.text doubleValue];
+	details.age = [_ageField.text integerValue];
+	if ([_sexSegControl selectedSegmentIndex] == 2)
+		details.sex = VUserSexOther;
+	else if ([_sexSegControl selectedSegmentIndex] == 1)
+		details.sex = VUserSexFemale;
+	else
+		details.sex = VUserSexMale;
+	
 	
 }
 

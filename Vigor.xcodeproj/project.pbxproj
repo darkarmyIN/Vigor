@@ -18,6 +18,7 @@
 		59402EE21CCB78FD003C883D /* VigorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EE11CCB78FD003C883D /* VigorUITests.m */; };
 		59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF61CCB7C2E003C883D /* InputTableViewCell.m */; };
 		59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */; };
+		59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 59402EFD1CCB83B9003C883D /* VUserDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,9 @@
 		59402EF61CCB7C2E003C883D /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputTableViewCell.m; path = Views/Cells/InputTableViewCell.m; sourceTree = "<group>"; };
 		59402EF81CCB7D89003C883D /* InputDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputDetailsTableViewController.h; path = Controllers/InputDetailsTableViewController.h; sourceTree = "<group>"; };
 		59402EF91CCB7D89003C883D /* InputDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputDetailsTableViewController.m; path = Controllers/InputDetailsTableViewController.m; sourceTree = "<group>"; };
+		59402EFB1CCB827D003C883D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		59402EFC1CCB83B9003C883D /* VUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VUserDetails.h; path = Models/VUserDetails.h; sourceTree = "<group>"; };
+		59402EFD1CCB83B9003C883D /* VUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VUserDetails.m; path = Models/VUserDetails.m; sourceTree = "<group>"; };
 		92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vigor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vigor/Pods-Vigor.debug.xcconfig"; sourceTree = "<group>"; };
 		C61248069DBFB72B0A0B15BA /* libPods-Vigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vigor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +140,7 @@
 			children = (
 				59402ECD1CCB78FD003C883D /* Info.plist */,
 				59402EBA1CCB78FD003C883D /* main.m */,
+				59402EFB1CCB827D003C883D /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				59402EC51CCB78FD003C883D /* Vigor.xcdatamodeld */,
+				59402EFC1CCB83B9003C883D /* VUserDetails.h */,
+				59402EFD1CCB83B9003C883D /* VUserDetails.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -403,6 +410,7 @@
 			files = (
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
+				59402EFE1CCB83B9003C883D /* VUserDetails.m in Sources */,
 				59402EF71CCB7C2E003C883D /* InputTableViewCell.m in Sources */,
 				59402EFA1CCB7D89003C883D /* InputDetailsTableViewController.m in Sources */,
 				59402EBB1CCB78FD003C883D /* main.m in Sources */,
@@ -549,6 +557,8 @@
 			baseConfigurationReference = 92B42F8E1E691D46398F7668 /* Pods-Vigor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Vigor/PrefixHeader.pch;
 				INFOPLIST_FILE = Vigor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.Vigor";
@@ -561,6 +571,8 @@
 			baseConfigurationReference = 2698BD35DD876B11EF302015 /* Pods-Vigor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Vigor/PrefixHeader.pch;
 				INFOPLIST_FILE = Vigor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Dark-Army.Vigor";
