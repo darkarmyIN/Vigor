@@ -8,7 +8,7 @@
 
 #import "GraphViewController.h"
 
-@interface GraphViewController () <ChartViewDelegate>
+@interface GraphViewController () <ChartViewDelegate, ORKPieChartViewDataSource>
 {
     NSMutableArray *kinveyDataArray;
 }
@@ -17,18 +17,28 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+@property (weak, nonatomic) IBOutlet ORKPieChartView *pieview;
 
 @end
 
 @implementation GraphViewController
 {
 	NSArray *legendTitles;
+	
+	NSInteger posCount;
+	NSInteger negCount;
+	
+	CGFloat one;
+	CGFloat two;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	
+	posCount = 1;
+	negCount = 1;
 	
 	legendTitles = @[@"SUN", @"MON", @"TUE", @"WED", @"THU", @"FRI", @"SAT"];
 	
@@ -78,6 +88,16 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	
+	self.pieview.dataSource = self;
+	self.pieview.showsTitleAboveChart = YES;
+	self.pieview.text = @"PIE VIEW";
+	self.pieview.lineWidth = 4.0;
+	[self.pieview animateWithDuration:1.0];
+	
+	[super viewDidAppear:animated];
+}
 - (void) load:(id) sender
 {
     
@@ -107,6 +127,9 @@
 	NSMutableArray *xAxisValues = [[NSMutableArray alloc] init];
 	NSMutableArray *yAxisValues = [[NSMutableArray alloc] init];
 	
+	posCount = 1;
+	negCount = 1;
+	
 	NSInteger index = [sender selectedSegmentIndex];
 	
 	if (index == 0)
@@ -119,7 +142,10 @@
 			Feedback *fback = [feedbacks objectAtIndex:i];
 			[xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
 			[yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.value.floatValue xIndex:i]];
+			if ([fback.review isEqualToString:@"positive"]) posCount++;
+			if ([fback.review isEqualToString:@"negative"]) negCount++;
 		}
+
 		
 	}
 	else
@@ -129,9 +155,16 @@
             OnlineFeedback *fback = [kinveyDataArray objectAtIndex:i];
             [xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
             [yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.valueForFeedback.floatValue xIndex:i]];
+			if ([fback.review isEqualToString:@"positive"]) posCount++;
+			if ([fback.review isEqualToString:@"negative"]) negCount++;
         }
         
 	}
+	
+	one = (posCount + 0.0)/(posCount + negCount + 1.0);
+	two = (negCount + 0.0)/(posCount + negCount + 1.0);
+	
+	NSLog(@"one : %f , two : %f",one,two);
 	
 	LineChartDataSet *dataSet = nil;
 	
@@ -192,6 +225,37 @@
     xAxis.labelPosition = XAxisLabelPositionBottom;
     
     chartView.rightAxis.enabled = NO;
+}
+
+#pragma mark - ORKPieChartDelegate
+
+- (NSInteger)numberOfSegmentsInPieChartView:(ORKPieChartView *)pieChartView {
+	return 3;
+}
+
+- (CGFloat)pieChartView:(ORKPieChartView *)pieChartView valueForSegmentAtIndex:(NSInteger)index {
+//	if (one == 0 || two == 0)
+//		return 1.0/3.0;
+	if (index == 0)
+		return one;
+	else if (index == 1)
+		return two;
+	return 1.0 - one - two;
+//	if (index == 0) return 0.24;
+//	else if (index == 1) return 0.44;
+//	return .32;
+}
+
+- (UIColor *)pieChartView:(ORKPieChartView *)pieChartView colorForSegmentAtIndex:(NSInteger)index {
+	if (index == 0) return [UIColor blueColor];
+	else if (index == 1) return [UIColor greenColor];
+	return [UIColor redColor];
+}
+
+- (NSString *)pieChartView:(ORKPieChartView *)pieChartView titleForSegmentAtIndex:(NSInteger)index {
+	if (index == 0) return @"Positive";
+	else if (index == 1) return @"Neutral";
+	return @"Negative";
 }
 
 /*

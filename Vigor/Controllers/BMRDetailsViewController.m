@@ -141,7 +141,7 @@
 		
 		@try {
 			id jsonData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//			NSLog(@"analyzesentiment:\n%@", jsonData);
+			NSLog(@"analyzesentiment:\n%@", jsonData);
 			
 			CGFloat aggscore = [[jsonData valueForKeyPath:@"aggregate.score"] doubleValue];
 			NSString *aggString = [jsonData valueForKeyPath:@"aggregate.sentiment"];
