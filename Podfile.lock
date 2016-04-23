@@ -5,6 +5,7 @@ PODS:
   - DZNEmptyDataSet (1.8)
   - IQKeyboardManager (4.0.2)
   - KinveyKit (1.40.7)
+  - ResearchKit (1.3.0)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - IQKeyboardManager
   - KinveyKit
+  - ResearchKit (~> 1.0)
   - SDWebImage (~> 3.7)
   - SVProgressHUD
 
@@ -23,6 +25,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
   IQKeyboardManager: 2341089c4ae25fa2fa82ce356a259fcd267dc6b6
   KinveyKit: 76c5e4b2865b6f490d481845c88d1b5d5ed986f7
+  ResearchKit: 934a1efefed1a3a9150002a1e4b123d0c86c3f2e
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 

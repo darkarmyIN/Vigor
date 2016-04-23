@@ -1,1 +1,1 @@
-../../../IQKeyboardManager/IQKeyboardManager/KeyboardManager.h
+../../../IQKeyboardManager/IQKeyBoardManager/KeyboardManager.h

@@ -8,7 +8,12 @@
 
 #import "BMRDetailsViewController.h"
 
-@interface BMRDetailsViewController ()
+@interface BMRDetailsViewController () <ORKTaskViewControllerDelegate>
+{
+    ORKInstructionStep *instructUser;
+    ORKQuestionStep *sendFeedback;
+    ORKFormStep *fillForm;
+}
 
 
 @property (weak, nonatomic) IBOutlet UILabel *howmuchLabel;
@@ -58,14 +63,41 @@
 	}
 }
 
-- (void)updateIntake:(CGFloat)multiplier {
+- (void)updateIntake:(CGFloat)multiplier
+{
 	CGFloat totalIntake = self.details.bmr * multiplier;
 	_bmrCountLabel.text = [NSString stringWithFormat:@"%.2f KCal", self.details.bmr];
 	_tciCountLabel.text = [NSString stringWithFormat:@"%.2f KCal", totalIntake];
 }
 
-- (IBAction)giveFeedbackAction:(id)sender {
-	
+- (IBAction)giveFeedbackAction:(id)sender
+{
+    instructUser = [[ORKInstructionStep alloc] initWithIdentifier:@"intro"];
+    instructUser.title = @"Enter Your Feedback";
+    
+    fillForm = [[ORKFormStep alloc] initWithIdentifier:@"FeedbackForm" title:@"Comments" text:@""];
+    ORKFormItem *feedbackItem = [[ORKFormItem alloc] initWithIdentifier:@"formItem" text:@"Give Your Feedback" answerFormat:[ORKAnswerFormat textAnswerFormat] optional:NO];
+    fillForm.formItems = @[feedbackItem];
+    
+    ORKOrderedTask *task = [[ORKOrderedTask alloc] initWithIdentifier:@"task" steps:@[instructUser, fillForm]];
+    
+    ORKTaskViewController *taskViewController =
+    [[ORKTaskViewController alloc] initWithTask:task taskRunUUID:nil];
+    taskViewController.delegate = self;
+    
+    [self presentViewController:taskViewController animated:YES completion:nil];
+}
+
+- (void)taskViewController:(ORKTaskViewController *)taskViewController didFinishWithReason:(ORKTaskViewControllerFinishReason)reason error:(NSError *)error
+{
+    ORKTaskResult *feedbackComplete = [taskViewController result];
+    
+    ORKStepResult *feedbackProvided = (ORKStepResult *) [feedbackComplete.results lastObject];
+    
+    // obtain input value from [[finalResult.results firstObject] valueForKey:@"answer"]
+    // send this value to haven api, then send results of that to kinvey
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

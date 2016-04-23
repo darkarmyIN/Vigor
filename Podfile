@@ -11,6 +11,7 @@ pod 'SVProgressHUD'
 pod 'SDWebImage', '~>3.7'
 pod 'Charts'
 pod 'KinveyKit'
+pod 'ResearchKit', '~> 1.0'
 
 end
 

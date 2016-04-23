@@ -55,6 +55,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-Vigor/Charts.framework'
   install_framework 'Pods-Vigor/DZNEmptyDataSet.framework'
   install_framework 'Pods-Vigor/IQKeyboardManager.framework'
+  install_framework 'Pods-Vigor/ResearchKit.framework'
   install_framework 'Pods-Vigor/SDWebImage.framework'
   install_framework 'Pods-Vigor/SVProgressHUD.framework'
 fi
@@ -62,6 +63,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-Vigor/Charts.framework'
   install_framework 'Pods-Vigor/DZNEmptyDataSet.framework'
   install_framework 'Pods-Vigor/IQKeyboardManager.framework'
+  install_framework 'Pods-Vigor/ResearchKit.framework'
   install_framework 'Pods-Vigor/SDWebImage.framework'
   install_framework 'Pods-Vigor/SVProgressHUD.framework'
 fi
