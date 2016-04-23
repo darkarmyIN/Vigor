@@ -61,8 +61,6 @@
 	
     _chartView.legend.form = ChartLegendFormLine;
 	
-    [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
-	
 	[self updateSegmentedControl:self.segmentedControl];
 	
 }
@@ -88,16 +86,20 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
 	
 	self.pieview.dataSource = self;
 	self.pieview.showsTitleAboveChart = YES;
 	self.pieview.text = @"PIE VIEW";
 	self.pieview.lineWidth = 4.0;
 	[self.pieview animateWithDuration:1.0];
+    
+    [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
 	
 	[super viewDidAppear:animated];
 }
+
 - (void) load:(id) sender
 {
     
@@ -183,6 +185,11 @@
 	LineChartData *data = [[LineChartData alloc] initWithXVals:xAxisValues dataSets:dataSets];
 	
 	_chartView.data = data;
+    
+    
+    self.pieview.dataSource = self;
+    [self.pieview animateWithDuration:1.0];
+    [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];
 }
 
 - (IBAction)dismissView:(id)sender
@@ -229,30 +236,29 @@
 
 #pragma mark - ORKPieChartDelegate
 
-- (NSInteger)numberOfSegmentsInPieChartView:(ORKPieChartView *)pieChartView {
+- (NSInteger)numberOfSegmentsInPieChartView:(ORKPieChartView *)pieChartView
+{
 	return 3;
 }
 
-- (CGFloat)pieChartView:(ORKPieChartView *)pieChartView valueForSegmentAtIndex:(NSInteger)index {
-//	if (one == 0 || two == 0)
-//		return 1.0/3.0;
-	if (index == 0)
-		return one;
-	else if (index == 1)
-		return two;
-	return 1.0 - one - two;
-//	if (index == 0) return 0.24;
-//	else if (index == 1) return 0.44;
-//	return .32;
+- (CGFloat)pieChartView:(ORKPieChartView *)pieChartView valueForSegmentAtIndex:(NSInteger)index
+{
+    if (index == 0)
+        return one;
+    else if (index == 1)
+        return two;
+    return 1.0 - one - two;
 }
 
-- (UIColor *)pieChartView:(ORKPieChartView *)pieChartView colorForSegmentAtIndex:(NSInteger)index {
+- (UIColor *)pieChartView:(ORKPieChartView *)pieChartView colorForSegmentAtIndex:(NSInteger)index
+{
 	if (index == 0) return [UIColor blueColor];
 	else if (index == 1) return [UIColor greenColor];
 	return [UIColor redColor];
 }
 
-- (NSString *)pieChartView:(ORKPieChartView *)pieChartView titleForSegmentAtIndex:(NSInteger)index {
+- (NSString *)pieChartView:(ORKPieChartView *)pieChartView titleForSegmentAtIndex:(NSInteger)index
+{
 	if (index == 0) return @"Positive";
 	else if (index == 1) return @"Neutral";
 	return @"Negative";
