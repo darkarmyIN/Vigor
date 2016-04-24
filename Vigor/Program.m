@@ -15,6 +15,7 @@
     
     return @{
              @"entityId" : KCSEntityKeyId,
+             @"programName" : @"name",
              @"completed" : @"isCompleted",
              @"notComplete" : @"isIncomplete",
              @"metadata" : KCSEntityKeyMetadata

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E64D0170A4889D69B8EA50BE"
+               BlueprintIdentifier = "0A4CA4ABD69691608EB8C2EC"
                BuildableName = "Pods_Vigor.framework"
                BlueprintName = "Pods-Vigor"
                ReferencedContainer = "container:Pods.xcodeproj">

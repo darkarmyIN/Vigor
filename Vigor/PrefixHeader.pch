@@ -29,6 +29,7 @@
 #import "Feedback.h"
 #import "OnlineFeedback.h"
 #import "ProgramNamesTableViewCell.h"
+#import "Program.h"
 
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height

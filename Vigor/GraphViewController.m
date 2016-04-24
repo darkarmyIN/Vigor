@@ -148,8 +148,6 @@
 			Feedback *fback = [feedbacks objectAtIndex:i];
 			[xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
 			[yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.value.floatValue xIndex:i]];
-//			if ([fback.review isEqualToString:@"positive"]) posCount+=1;
-//			if ([fback.review isEqualToString:@"negative"]) negCount+=1;
 			if (fback.value.floatValue > 0.2)
 				posCount += 1;
 			if (fback.value.floatValue < -0.2)
@@ -161,12 +159,11 @@
 	else
     {
 		// Kinvey
-        for (NSInteger i = kinveyDataArray.count - 1; i >= 0; --i) {
+        for (NSInteger i = kinveyDataArray.count - 1; i >= 0; --i)
+        {
             OnlineFeedback *fback = [kinveyDataArray objectAtIndex:i];
             [xAxisValues addObject:[NSString stringWithFormat:@"%@", legendTitles[i%7]]];
             [yAxisValues addObject:[[ChartDataEntry alloc] initWithValue:fback.valueForFeedback.floatValue xIndex:i]];
-//			if ([fback.review isEqualToString:@"positive"]) posCount+=1;
-//			if ([fback.review isEqualToString:@"negative"]) negCount+=1;
 			if (fback.valueForFeedback.floatValue > 0.2)
 				posCount += 1;
 			if (fback.valueForFeedback.floatValue < -0.2)
@@ -177,13 +174,6 @@
 	
 	one = (posCount + 0.0)/(posCount + negCount + 1.0);
 	two = (negCount + 0.0)/(posCount + negCount + 1.0);
-	
-//	if (one == 0.0)
-//		one = 1/3.0;
-//	if (two == 0.0)
-//		two = 1/3.0;
-	
-	NSLog(@"one : %f , two : %f",one,two);
 	
 	LineChartDataSet *dataSet = nil;
 	
@@ -292,15 +282,5 @@
 	else if (index == 1) return @"Neutral";
 	return @"Negative";
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

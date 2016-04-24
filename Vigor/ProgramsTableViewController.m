@@ -90,11 +90,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[[NSUserDefaults standardUserDefaults] setObject:[programNames objectAtIndex:indexPath.row] forKey:@"CurrentProgram"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@", [programNames objectAtIndex:indexPath.row]]])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:[NSString stringWithFormat:@"%@", [programNames objectAtIndex:indexPath.row]]];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	return 60.f;
 }
 

@@ -11,6 +11,7 @@
 @interface Program : NSObject <KCSPersistable>
 
 @property (nonatomic, retain) NSString *entityId;
+@property (nonatomic, retain) NSString *programName;
 @property (nonatomic, retain) NSNumber *completed;
 @property (nonatomic, retain) NSNumber *notComplete;
 
