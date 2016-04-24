@@ -39,8 +39,8 @@ colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
-#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xfcf9ee, 1.f)
-#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0x48ac53, 1.f)
+#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0x00796B, 1.f)
+#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0xF4E4C4, 1.f)
 
 #define GLOBAL_RED_COLOR UIColorFromRGBWithAlpha(0xDC4B3F, 1.f)
 #define GLOBAL_GREEN_COLOR UIColorFromRGBWithAlpha(0x39CB75, 1.f)

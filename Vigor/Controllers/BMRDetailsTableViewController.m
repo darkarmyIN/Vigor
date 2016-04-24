@@ -35,6 +35,8 @@
 @implementation BMRDetailsTableViewController
 {
 	BOOL selected;
+	
+	CGFloat one;
 }
 
 - (void)viewDidLoad
@@ -62,6 +64,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	
+	one = arc4random_uniform(100)/200.0;
 	
 	if (self.details)
     {
@@ -229,27 +233,34 @@
 	}
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	return (indexPath.section == 0 || indexPath.section == tableView.numberOfSections - 1);
+}
+
 #pragma mark - ORKPieChartDelegate
 
 - (NSInteger)numberOfSegmentsInPieChartView:(ORKPieChartView *)pieChartView
 {
-    if (completedCount == 0 && totalCount == 0)
-        return 0;
-    if (completedCount == 0 || totalCount-completedCount == 0)
-        return 1;
+//    if (completedCount == 0 && totalCount == 0)
+//        return 0;
+//    if (completedCount == 0 || totalCount-completedCount == 0)
+//        return 1;
 	return 2;
 }
 
 - (CGFloat)pieChartView:(ORKPieChartView *)pieChartView valueForSegmentAtIndex:(NSInteger)index
 {
+//	if (index == 0)
+//    {
+//        return completedCount;
+//    }
+//    else
+//    {
+//        return totalCount-completedCount;
+//    }
 	if (index == 0)
-    {
-        return completedCount;
-    }
-    else
-    {
-        return totalCount-completedCount;
-    }
+		return one;
+	return 1.0 - one;
 }
 
 - (UIColor *)pieChartView:(ORKPieChartView *)pieChartView colorForSegmentAtIndex:(NSInteger)index

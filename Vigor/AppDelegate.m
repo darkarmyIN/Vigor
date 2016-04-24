@@ -48,6 +48,25 @@
 		self.window.rootViewController = navc;
 	}
 	
+	
+	[[UITabBarItem appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: GLOBAL_TINT_COLOR}
+											 forState:UIControlStateSelected];
+	[[UITabBarItem appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor lightGrayColor]}
+											 forState:UIControlStateNormal];
+	
+	[[UITabBar appearance] setTintColor:GLOBAL_TINT_COLOR];
+	[[UITabBar appearance] setBarTintColor:GLOBAL_BACK_COLOR];
+	[[UITabBar appearance] setBackgroundColor:GLOBAL_BACK_COLOR];
+	
+	[[UINavigationBar appearance] setBackgroundColor:GLOBAL_BACK_COLOR];
+	[[UINavigationBar appearance] setBarTintColor:GLOBAL_BACK_COLOR];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: GLOBAL_TINT_COLOR}];
+	
+	[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+	[SVProgressHUD setBackgroundColor:GLOBAL_BACK_COLOR];
+	[SVProgressHUD setForegroundColor:GLOBAL_TINT_COLOR];
+	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+	
 	return YES;
 }
 

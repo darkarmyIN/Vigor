@@ -94,7 +94,7 @@
 	self.pieview.dataSource = self;
 	self.pieview.showsTitleAboveChart = YES;
 	self.pieview.text = @"Feedback";
-	self.pieview.lineWidth = 4.0;
+	self.pieview.lineWidth = 8.0;
 //	[self.pieview animateWithDuration:1.0];
 	
     [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutCirc];

@@ -81,9 +81,15 @@
     {
         cell = [[ProgramNamesTableViewCell alloc] init];
     }
-    cell.programImage = nil;
+    cell.programImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%li", ((indexPath.row)%8+1)]];
     cell.programNameLabel.text = [NSString stringWithFormat:@"%@", [programNames objectAtIndex:indexPath.row]];
     cell.programDescriptionLabel.text = [programDesc objectAtIndex:indexPath.row];
+	
+	if ([[NSString stringWithFormat:@"%@", [programNames objectAtIndex:indexPath.row]] isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentProgram"]])
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	else
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	
     return cell;
 }
 
