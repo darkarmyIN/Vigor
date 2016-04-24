@@ -1,1 +1,1 @@
-../../../KinveyKit/KinveyKit-1.40.7/include/KinveyKit/KCSLinkedAppdataStore.h
+../../../KinveyKit/KinveyKit-1.40.5/include/KinveyKit/KCSLinkedAppdataStore.h

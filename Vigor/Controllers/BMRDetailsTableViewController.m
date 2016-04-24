@@ -221,6 +221,7 @@
 		selected = YES;
 		[tableView reloadData];
 		[tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+		[tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 	}
 	else
     {

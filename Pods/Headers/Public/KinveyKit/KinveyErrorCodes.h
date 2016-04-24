@@ -1,1 +1,1 @@
-../../../KinveyKit/KinveyKit-1.40.7/include/KinveyKit/KinveyErrorCodes.h
+../../../KinveyKit/KinveyKit-1.40.5/include/KinveyKit/KinveyErrorCodes.h

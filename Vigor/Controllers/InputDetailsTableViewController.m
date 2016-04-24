@@ -35,13 +35,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0)
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0) {
 		details = [[VUserDetails alloc] init];
-	
-	_heightField.text = [NSString stringWithFormat:@"%.2f", details.height];
-	_weightField.text = [NSString stringWithFormat:@"%.2f", details.weight];
-	_ageField.text = [NSString stringWithFormat:@"%li", details.age];
-	_sexSegControl.selectedSegmentIndex = (details.sex == VUserSexMale)?0:1;
+		_heightField.text = [NSString stringWithFormat:@"%.2f", details.height];
+		_weightField.text = [NSString stringWithFormat:@"%.2f", details.weight];
+		_ageField.text = [NSString stringWithFormat:@"%li", details.age];
+		_sexSegControl.selectedSegmentIndex = (details.sex == VUserSexMale)?0:1;
+	}
 
 }
 

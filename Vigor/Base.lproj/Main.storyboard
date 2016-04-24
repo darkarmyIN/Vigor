@@ -867,59 +867,69 @@
             <point key="canvasLocation" x="2087.5" y="1598.5"/>
         </scene>
         <!--Graph View Controller-->
-        <scene sceneID="Jml-aO-JjC">
+        <scene sceneID="wek-BK-6xL">
             <objects>
-                <viewController id="UE4-fZ-lfg" customClass="GraphViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UFJ-Qj-IjG"/>
-                        <viewControllerLayoutGuide type="bottom" id="a8j-2W-mUc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8d6-VN-TMa">
+                <tableViewController id="Pon-uT-P9T" customClass="GraphViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="sZX-kU-JP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03D-I2-k7f" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="370" width="343" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="0Hs-xA-Ep4"/>
-                                    <constraint firstAttribute="height" constant="240" id="uxg-2l-xUQ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0Hs-xA-Ep4"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br6-I4-gfL" customClass="ORKPieChartView">
-                                <rect key="frame" x="67" y="86" width="240" height="240"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="EBx-Yr-e6U"/>
-                                    <constraint firstAttribute="width" constant="240" id="m6a-LY-JSN"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="a8j-2W-mUc" firstAttribute="top" secondItem="03D-I2-k7f" secondAttribute="bottom" constant="8" id="9IE-Ho-3Lv"/>
-                            <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="br6-I4-gfL" secondAttribute="bottom" constant="44" id="Hy7-0W-y9R"/>
-                            <constraint firstItem="br6-I4-gfL" firstAttribute="centerX" secondItem="8d6-VN-TMa" secondAttribute="centerX" id="Nmh-1w-DOM"/>
-                            <constraint firstItem="03D-I2-k7f" firstAttribute="top" secondItem="UFJ-Qj-IjG" secondAttribute="bottom" constant="8" id="WSf-zQ-sI1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="03D-I2-k7f" secondAttribute="trailing" id="Z23-6X-G01"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="03D-I2-k7f" secondAttribute="leading" id="gMY-Ei-09f"/>
-                            <constraint firstItem="a8j-2W-mUc" firstAttribute="top" secondItem="03D-I2-k7f" secondAttribute="bottom" constant="240" id="sjb-UO-QqQ"/>
-                            <constraint firstItem="br6-I4-gfL" firstAttribute="top" secondItem="UFJ-Qj-IjG" secondAttribute="bottom" constant="8" id="y1F-Js-l4z"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="y1F-Js-l4z"/>
-                                <exclude reference="WSf-zQ-sI1"/>
-                                <exclude reference="sjb-UO-QqQ"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="Xl1-S5-N3y">
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="" id="SLi-SD-cmJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="keh-7P-YlK">
+                                        <rect key="frame" x="0.0" y="99" width="375" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="keh-7P-YlK" id="y9I-BV-jYi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8x-ek-RX7" customClass="ORKPieChartView">
+                                                    <rect key="frame" x="8" y="8" width="359" height="223.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a8x-ek-RX7" secondAttribute="bottom" id="0XG-cj-q8b"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="a8x-ek-RX7" secondAttribute="leading" id="Pj6-1Y-7jr"/>
+                                                <constraint firstAttribute="topMargin" secondItem="a8x-ek-RX7" secondAttribute="top" id="anH-GZ-IPu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="a8x-ek-RX7" secondAttribute="trailing" id="mvG-yw-9cW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="qa9-e4-Vof">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="lQZ-IF-lGG">
+                                        <rect key="frame" x="0.0" y="375" width="375" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lQZ-IF-lGG" id="6At-cg-FyE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-Hp-bRX" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="8" y="8" width="359" height="223.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="QFB-Hp-bRX" secondAttribute="leading" id="6QG-bZ-SCG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QFB-Hp-bRX" secondAttribute="trailing" id="Vwo-tc-n3j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QFB-Hp-bRX" secondAttribute="bottom" id="auk-da-mua"/>
+                                                <constraint firstAttribute="topMargin" secondItem="QFB-Hp-bRX" secondAttribute="top" id="zXg-eX-xGM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Pon-uT-P9T" id="Rb7-RV-2Rx"/>
+                            <outlet property="delegate" destination="Pon-uT-P9T" id="vMx-60-xxE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="x0V-2I-LmC">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="tzy-GW-6F7">
                             <rect key="frame" x="87.5" y="7" width="200" height="30"/>
@@ -929,18 +939,18 @@
                                 <segment title="Community"/>
                             </segments>
                             <connections>
-                                <action selector="updateSegmentedControl:" destination="UE4-fZ-lfg" eventType="valueChanged" id="vON-Mm-XoF"/>
+                                <action selector="updateSegmentedControl:" destination="Pon-uT-P9T" eventType="valueChanged" id="7WH-Ex-V8Z"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="chartView" destination="03D-I2-k7f" id="M17-85-Omh"/>
-                        <outlet property="pieview" destination="br6-I4-gfL" id="658-ef-gep"/>
-                        <outlet property="segmentedControl" destination="tzy-GW-6F7" id="upQ-9i-p9h"/>
+                        <outlet property="chartView" destination="QFB-Hp-bRX" id="i0H-KC-OAn"/>
+                        <outlet property="pieview" destination="a8x-ek-RX7" id="Soj-Tq-wGL"/>
+                        <outlet property="segmentedControl" destination="tzy-GW-6F7" id="i1P-YN-cJJ"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QRS-JP-Hb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qp-tL-YjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2087.5" y="2388.5"/>
         </scene>
@@ -978,7 +988,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="UE4-fZ-lfg" kind="relationship" relationship="rootViewController" id="I72-kO-Ztu"/>
+                        <segue destination="Pon-uT-P9T" kind="relationship" relationship="rootViewController" id="3bT-Hf-7FM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpQ-ki-dhj" userLabel="First Responder" sceneMemberID="firstResponder"/>

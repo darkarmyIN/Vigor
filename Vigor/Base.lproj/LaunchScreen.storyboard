@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,44 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6d-KE-JRp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7H-69-aRh">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <items>
+                                            <navigationItem id="xsQ-Q3-n1r"/>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="UOK-gx-hVM"/>
+                                    <constraint firstItem="O7H-69-aRh" firstAttribute="leading" secondItem="H6d-KE-JRp" secondAttribute="leading" id="UcD-ev-fIH"/>
+                                    <constraint firstAttribute="bottom" secondItem="O7H-69-aRh" secondAttribute="bottom" id="gHN-rw-L6U"/>
+                                    <constraint firstAttribute="trailing" secondItem="O7H-69-aRh" secondAttribute="trailing" id="zdU-Nd-KuJ"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPu-4v-OIX">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem id="h4C-nV-MFL"/>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H6d-KE-JRp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="J0r-3T-Ses"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H6d-KE-JRp" secondAttribute="trailing" constant="-20" id="SBZ-5e-YpN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iPu-4v-OIX" secondAttribute="trailing" constant="-20" id="Sjl-LK-mx0"/>
+                            <constraint firstItem="iPu-4v-OIX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="acs-pb-rVa"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="iPu-4v-OIX" secondAttribute="bottom" id="mC5-Du-0uX"/>
+                            <constraint firstItem="H6d-KE-JRp" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="nBP-b4-Htr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

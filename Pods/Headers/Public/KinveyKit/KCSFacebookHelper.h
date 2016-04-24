@@ -1,1 +1,1 @@
-../../../KinveyKit/KinveyKit-1.40.7/include/KinveyKit/KCSFacebookHelper.h
+../../../KinveyKit/KinveyKit-1.40.5/include/KinveyKit/KCSFacebookHelper.h

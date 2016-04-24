@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GraphViewController : UIViewController
+@interface GraphViewController : UITableViewController
 
 @end
