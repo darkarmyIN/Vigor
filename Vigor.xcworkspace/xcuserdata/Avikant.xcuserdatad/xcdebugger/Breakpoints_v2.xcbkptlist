@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Vigor/Controllers/InputDetailsTableViewController.m"
-            timestampString = "483144456.941404"
+            timestampString = "483152397.028278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-doneAction:"
             landmarkType = "5">
          </BreakpointContent>

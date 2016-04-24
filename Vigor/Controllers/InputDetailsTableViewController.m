@@ -8,6 +8,7 @@
 
 #import "InputDetailsTableViewController.h"
 #import "BMRDetailsViewController.h"
+#import "BMRDetailsTableViewController.h"
 
 @interface InputDetailsTableViewController ()
 
@@ -85,7 +86,7 @@
 	
 	UITabBarController *tabVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
 	UINavigationController *navc = [tabVC.viewControllers firstObject];
-	BMRDetailsViewController *bdvc = [navc.viewControllers firstObject];
+	BMRDetailsTableViewController *bdvc = [navc.viewControllers firstObject];
 	bdvc.details = details;
 	
 	[self presentViewController:tabVC animated:YES completion:^{

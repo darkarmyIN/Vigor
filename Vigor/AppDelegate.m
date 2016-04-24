@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BMRDetailsViewController.h"
+#import "BMRDetailsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -38,7 +38,7 @@
 	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"VUAge"] > 0) {
 		UITabBarController *tabVC = [storyboard instantiateViewControllerWithIdentifier:@"TabBarVC"];
 		UINavigationController *navc = [tabVC.viewControllers firstObject];
-		BMRDetailsViewController *bmrvc = [navc.viewControllers firstObject];
+		BMRDetailsTableViewController *bmrvc = [navc.viewControllers firstObject];
 		bmrvc.details = [[VUserDetails alloc] init];
 		self.window.rootViewController = tabVC;
 	}
