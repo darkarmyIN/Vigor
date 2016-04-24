@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1849C9B21CCBF6B000249562 /* OnlineFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849C9B11CCBF6B000249562 /* OnlineFeedback.m */; };
+		18C3A6071CCC4AB1002597B9 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3A6061CCC4AB1002597B9 /* Program.m */; };
 		18DBA2951CCB9172006FD8DB /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DBA2941CCB9172006FD8DB /* GraphViewController.m */; };
 		18FAD71B1CCC1AA6008B001C /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FAD71A1CCC1AA6008B001C /* ProgramsTableViewController.m */; };
 		18FAD71D1CCC220D008B001C /* ProgramName.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FAD71C1CCC220D008B001C /* ProgramName.xib */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		1849C9B01CCBF6B000249562 /* OnlineFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineFeedback.h; sourceTree = "<group>"; };
 		1849C9B11CCBF6B000249562 /* OnlineFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineFeedback.m; sourceTree = "<group>"; };
+		18C3A6051CCC4AB1002597B9 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		18C3A6061CCC4AB1002597B9 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		18DBA2931CCB9172006FD8DB /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		18DBA2941CCB9172006FD8DB /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		18FAD7191CCC1AA6008B001C /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				59402EFD1CCB83B9003C883D /* VUserDetails.m */,
 				1849C9B01CCBF6B000249562 /* OnlineFeedback.h */,
 				1849C9B11CCBF6B000249562 /* OnlineFeedback.m */,
+				18C3A6051CCC4AB1002597B9 /* Program.h */,
+				18C3A6061CCC4AB1002597B9 /* Program.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			files = (
 				59402EC71CCB78FD003C883D /* Vigor.xcdatamodeld in Sources */,
 				59402F131CCBEE26003C883D /* Feedback.m in Sources */,
+				18C3A6071CCC4AB1002597B9 /* Program.m in Sources */,
 				59402EBE1CCB78FD003C883D /* AppDelegate.m in Sources */,
 				1849C9B21CCBF6B000249562 /* OnlineFeedback.m in Sources */,
 				59402F121CCBEE26003C883D /* Feedback+CoreDataProperties.m in Sources */,
